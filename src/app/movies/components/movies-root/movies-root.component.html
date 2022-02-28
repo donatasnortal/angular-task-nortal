@@ -1,0 +1,23 @@
+<h2>2000s movies</h2>
+<div class="row">
+  <label for="movie-count">Movies count: </label>
+  <input id="movie-count" type="number" [(ngModel)]="movieCount" />
+</div>
+<div class="row">
+  <app-movies-2000s [count]="movieCount"></app-movies-2000s>
+</div>
+
+<div class="row">
+  <div class="column">
+    <h2>Movies list</h2>
+    <app-movies-list
+      [movies]="movies"
+      (open)="open($event)"
+      (delete)="delete($event)"
+    ></app-movies-list>
+  </div>
+  <div class="column" *ngIf="!!selectedMovie">
+    <h2>Movie</h2>
+    <app-movie-form [movie]="selectedMovie"></app-movie-form>
+  </div>
+</div>

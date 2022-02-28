@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let movie of movies">
+    <button (click)="open.emit(movie)">Open</button>
+    <button (click)="delete.emit(movie.id)">Delete</button>
+    {{ getMovieTitle(movie) }} yrs old
+  </li>
+</ul>
